@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200406163820) do
+ActiveRecord::Schema.define(version: 20200407184656) do
+
+  create_table "tokens", force: :cascade do |t|
+    t.string   "name",             null: false
+    t.string   "tokenizable_type", null: false
+    t.integer  "tokenizable_id",   null: false
+    t.string   "token",            null: false
+    t.text     "data"
+    t.datetime "expires_at"
+    t.datetime "created_at",       null: false
+    t.index ["expires_at"], name: "index_tokens_on_expires_at"
+    t.index ["token"], name: "index_tokens_on_token"
+    t.index ["tokenizable_id", "tokenizable_type", "name"], name: "index_tokens_on_tokenizable_id_and_tokenizable_type_and_name", unique: true
+    t.index ["tokenizable_type", "tokenizable_id"], name: "index_tokens_on_tokenizable_type_and_tokenizable_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
