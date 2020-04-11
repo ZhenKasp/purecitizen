@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   namespace :api do
-    resources :test, only: %i(index)
+    namespace :v1 do
+      resources :test, only: %i(index)
+    end
   end
 
   get 'about' => 'about#index'
