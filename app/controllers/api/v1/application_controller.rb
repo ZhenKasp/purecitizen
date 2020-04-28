@@ -1,7 +1,8 @@
 module Api
   module V1
-    class SessionController < ApplicationController
-      #before_action :authenticate
+    class ApplicationController < ::ApplicationController
+      protect_from_forgery with: :null_session
+      before_action :authenticate
 
       private
 
