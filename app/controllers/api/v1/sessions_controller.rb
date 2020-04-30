@@ -5,7 +5,6 @@ module Api
 
       def show
         byebug
-        #@user = User.find_by()
       end
 
       def create

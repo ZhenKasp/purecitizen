@@ -4,8 +4,6 @@ module Api
       skip_before_action :authenticate
 
       def index
-
-        #render json: {message: "Hello world!"}
         render json: User.all
       end
     end
