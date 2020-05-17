@@ -11,10 +11,10 @@ module Api
       def create
         @post = Post.create(post_params)
 
-        if result.all?(&:persisted?)
-          render json: { "Post created" }
+        if @post.persisted?
+          render json: { message: "Post created" }
         else
-          render error: { "Post was not created" }
+          render json: { error: @post.errors.full_messages }
         end
       end
 
