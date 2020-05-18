@@ -12,7 +12,7 @@ module Api
         @post = Post.create(post_params)
 
         if @post.persisted?
-          render json: { message: "Post created" }
+          render json: { message: "Запрос создан" }
         else
           render json: { error: @post.errors.full_messages }
         end

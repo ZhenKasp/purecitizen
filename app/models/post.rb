@@ -13,7 +13,9 @@ class Post < ApplicationRecord
     {
       title: title,
       body: body,
-      image: ApplicationController::Base.asset_host + image.url
+      longitude: longitude,
+      latitude: latitude,
+      image: ActionController::Base.asset_host + image.url
     }
   end
 end

@@ -3,10 +3,6 @@ module Api
     class UsersController < Api::V1::ApplicationController
       before_action :authenticate, except: [:create]
 
-
-      def index
-      end
-
       def create
         user = User.create(user_params)
         render json: { token: user.token }

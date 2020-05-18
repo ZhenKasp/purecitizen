@@ -27,8 +27,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_controller.asset_host = 'http://192.168.100.4:3000'
-  
+  config.action_controller.asset_host = 'http://192.168.100.3:3000'
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

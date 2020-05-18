@@ -1,7 +1,10 @@
-<%= link_to "Back", root_path, class: "btn btn-primary" %>
+<%= link_to "Назад", root_path, class: "btn btn-primary" %>
 <br><br>
 <div>
   <h1><%= @post.title %></h1>
+  <br>
+  <%= image_tag @post.image.url %>
+  <br>
   <p><%= simple_format(@post.body) %></p>
   <hr>
   <% if @post.created_at == @post.updated_at %>
@@ -11,5 +14,5 @@
   <% end %>
 </div>
 <hr>
-<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning" %>
-<%= link_to 'Delete post', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger" %>
+<%= link_to 'Редактирование запроса', edit_post_path(@post), class: "btn btn-warning" %>
+<%= link_to 'Удаление запроса', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger" %>
